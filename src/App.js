@@ -1,24 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import AddNewTransaction from './components/AddNewTransaction';
+import Balance from './components/Balance';
+import Header from './components/Header';
+import IncomeExpenseSection from './components/IncomeExpenseSection';
+import Toggler from './components/Toggler';
+import TransactionList from './components/TransactionList';
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+import { ContextProvider } from './GlobalContext';
+
+
+
+const mainContainer = {
+  height: '100vh',
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+}
+const paper = { width: '50%' }
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContextProvider>
+      <Box sx={mainContainer}>
+        <Paper elevation={3} sx={paper} >
+          <Header />
+          <Balance />
+          <Toggler />
+          <IncomeExpenseSection />
+          <TransactionList />
+          <AddNewTransaction />
+        </Paper>
+      </Box>
+    </ContextProvider>
   );
 }
 
