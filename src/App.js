@@ -18,22 +18,23 @@ const mainContainer = {
   justifyContent: 'center',
   alignItems: 'center'
 }
-const paper = { width: '60%' }
+const paper = { width: '60%', padding: '30px' }
 
 function App() {
   return (
-    <div className='App'>    <ContextProvider>
-      <Box sx={mainContainer}>
-        <Paper elevation={3} sx={paper} >
-          <Header />
-          <Balance />
-          {/* <Toggler /> */}
-          <IncomeExpenseSection />
-          <TransactionList />
-          <AddNewTransaction />
-        </Paper>
-      </Box>
-    </ContextProvider>
+    <div className='App'>
+      <ContextProvider>
+        <Box sx={mainContainer}>
+          <Paper elevation={3} sx={paper} >
+            <Header />
+            <Balance />
+            {/* <Toggler /> */}
+            <IncomeExpenseSection />
+            <TransactionList />
+            <AddNewTransaction />
+          </Paper>
+        </Box>
+      </ContextProvider>
     </div>
 
   );

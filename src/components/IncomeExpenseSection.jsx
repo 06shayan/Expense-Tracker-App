@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box, Card, CardContent, Typography, styled} from '@mui/material';
+import { Box, Card, CardContent, Typography, styled } from '@mui/material';
 
 const Container = styled(Box)`
 display: flex;
@@ -13,22 +13,21 @@ display: flex;
 
 function IncomeExpenseSection() {
     return (
-       <Container>
-        <Card>
-            <CardContent>
-                <Typography sx={{fontSize: '20px'}}> Income</Typography>
-                <Typography sx={{color: 'green', fontSize:'20px'}}>$ 100</Typography>
-            </CardContent>
-        </Card>
-        <Card>
-            <CardContent>
-                <Typography sx={{fontSize: '20px'}}>Expense</Typography>
-                <Typography sx={{color: 'red',fontSize:'20px'}}>$ 50</Typography> 
-            </CardContent>
-        </Card>
-       </Container>
+        <Container>
+            <Card sx={{ marginRight: '10px' }}>
+                <CardContent>
+                    <Typography sx={{ fontSize: '20px' }}> Income</Typography>
+                    <Typography sx={{ color: 'green', fontSize: '20px' }}>$ 100</Typography>
+                </CardContent>
+            </Card>
+            <Card sx={{ marginLeft: '10px' }}>
+                <CardContent>
+                    <Typography sx={{ fontSize: '20px' }}>Expense</Typography>
+                    <Typography sx={{ color: 'red', fontSize: '20px' }}>$ 50</Typography>
+                </CardContent>
+            </Card>
+        </Container>
     )
 }
 
 export default IncomeExpenseSection
- 
