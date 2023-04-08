@@ -1,0 +1,66 @@
+.App {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1636953056323-9c09fdd74fa6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80");
+    background-size: cover;
+	background-position: center;
+  }
+
+  h1 {
+    margin: 10px auto ;
+    width: max-content;
+    position: relative;
+    cursor: pointer;
+  }
+  h1::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    height: 4px;
+    width: 100%;
+    left: 0;
+    background-color: rgb(32, 30, 30);
+    transition: 0.3s;
+    transition-timing-function: ease-in-out;
+    transform: scaleX(0);
+  }
+  h1:hover::after{
+    transform: scaleX(1);
+  }
+
+
+ h3{
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 10px;
+    margin: 40px 0 10px;
+    text-transform: uppercase;
+    font-size: 22px;
+ }
+
+ span{
+    margin: 0;
+    letter-spacing: 1px;
+    font-size: 22px;
+ }
+/* 
+ .income-expense-box{
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    border: 0;
+ 
+ }
+
+ .income-expense-box > div {
+    flex: 1;
+    text-align: center;
+ }
+ 
+ .income-expense-box > div:first-of-type{
+    border-right: 1px solid #dedede;
+ } */

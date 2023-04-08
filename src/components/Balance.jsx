@@ -5,7 +5,10 @@ function Balance() {
     // const test = useContext(ApplicationContext)
     // console.log('test', test)
     return (
-        <div>Balance</div>
+        <>
+        <h3>Balance: <span>$ 0.00</span></h3>
+
+        </>
     )
 }
 
