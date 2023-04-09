@@ -16,9 +16,10 @@ const mainContainer = {
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
+
 }
-const paper = { width: '60%', padding: '30px' }
+const paper = { width: '60%', padding: '30px', backgroundColor: '#FFEAEA'   }
 
 function App() {
   return (

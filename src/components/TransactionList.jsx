@@ -4,7 +4,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import Box from '@mui/material/Box';
 import { v4 as uuidv4 } from 'uuid';
 
-const containerStyles = { display: 'flex', background: '#3fbf6e', justifyContent: 'space-between', margin: '20px 0px', padding: '10px', color: 'white' }
+const containerStyles = { display: 'flex', background: '#59CE8F', justifyContent: 'space-between', margin: '20px 0px', padding: '10px', color: 'white', fontSize: '20px' }
 
 
 
