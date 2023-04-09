@@ -1,19 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
 import Box from '@mui/material/Box';
 import { v4 as uuidv4 } from 'uuid';
+import { ApplicationContext } from '../GlobalContext';
 
 const containerStyles = { display: 'flex', background: '#59CE8F', justifyContent: 'space-between', margin: '20px 0px', padding: '10px', color: 'white', fontSize: '20px' }
 
 
 
 function TransactionList() {
-    const transactionList = [
-        { item: 'item 1', amount: 200, date: new Date() },
-        { item: 'item 2', amount: 400, date: new Date() },
-        { item: 'item 3', amount: 600, date: new Date() },
-    ]
+    const transactionList = useContext(ApplicationContext)
     return (
         <>
             {

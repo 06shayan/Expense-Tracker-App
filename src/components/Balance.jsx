@@ -6,7 +6,7 @@ function Balance() {
     // console.log('test', test)
     return (
         <>
-        <h3>Balance: <span>$ 0.00</span></h3>
+            <h3>Balance: <span>$ 0.00</span></h3>
 
         </>
     )
