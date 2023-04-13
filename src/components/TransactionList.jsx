@@ -10,7 +10,7 @@ const containerStyles = { display: 'flex', background: '#59CE8F', justifyContent
 
 
 function TransactionList() {
-    const transactionList = useContext(ApplicationContext)
+    const { transactionList } = useContext(ApplicationContext)
     return (
         <>
             {

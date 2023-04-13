@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { ApplicationContext } from '../GlobalContext'
 
-function AddNewTransaction({ handleSubmit }) {
+function AddNewTransaction() {
 
   const [text, setText] = useState('')
   const [amount, setAmount] = useState(0)
+  const { transactionList, transactionDispatch } = useContext(ApplicationContext)
+
 
   const handleDescription = (e) => {
     setText(e.target.value)
@@ -17,6 +20,7 @@ function AddNewTransaction({ handleSubmit }) {
     e.preventDefault()
     const selectedButton = e.target.id
     const data = { item: text, amount: amount, date: new Date() }
+    transactionDispatch({ type: 'add-transaction', payload: data })
   }
 
   return (
