@@ -114,3 +114,23 @@ input[type='number'] {
   padding: 10px;
   width: 70%;
 }
+
+#validation {
+  display: inline-block;
+  margin: 10px 0;
+  font-size: medium;
+  color: #FF1E00;
+}
+
+/* .btn-reset {
+  cursor: pointer;
+  background-color: #ccb2af;
+  box-shadow: var(--box-shadow);
+  color: #0a0909;
+  border: 0;
+  display: block;
+  font-size: 20px;
+  width: 10%;
+  display: inline;
+  margin-left: 10px;
+} */
