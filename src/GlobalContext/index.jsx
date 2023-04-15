@@ -11,18 +11,12 @@ export const ContextProvider = ({ children }) => {
         { id: 3, backgroundColor: '#59CE8F', item: 'item 3', amount: 600, date: new Date() },
     ]
     const [transactionList, transactionDispatch] = useReducer(TransactionReducer, list)
-    function clearTransaction (data) {
-        transactionDispatch ({
-            type: 'reset',
-            payload: data
-        })
-    }
+
 
     return (
         <ApplicationContext.Provider value={{
             transactionList,
             transactionDispatch,
-            clearTransaction
         }}>
             {children}
         </ApplicationContext.Provider>

@@ -5,10 +5,9 @@ export function TransactionReducer(state, action) {
 
         case 'delete-transaction':
             return state.filter(transaction => transaction.id !== action.payload.id)
-            
 
         case 'reset':
-            return [];
+            return []
 
         default:
             return state
