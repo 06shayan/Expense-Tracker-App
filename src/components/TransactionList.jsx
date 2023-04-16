@@ -12,7 +12,7 @@ import { selectClasses } from '@mui/material';
 
 
 function TransactionList() {
-    
+
     const { transactionList, transactionDispatch } = useContext(ApplicationContext)
     const containerStyles = {
         display: 'flex',
@@ -30,6 +30,15 @@ function TransactionList() {
     const handleDelete = (id) => {
         transactionDispatch({ type: 'delete-transaction', payload: { id: id } })
     }
+
+    // const handleEdit=()=>{
+    //     {decription:'kkk',amount:98,date:283728}
+    //     dispatchText()
+    //     setAmount
+
+    //     transactionDispatch({ type: 'delete-transaction', payload: { id: id } })
+
+    // }
 
 
     return (
