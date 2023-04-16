@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import { v4 as uuidv4 } from 'uuid';
 import AddNewTransaction from './AddNewTransaction';
 import { ApplicationContext } from '../GlobalContext';
-
 import { selectClasses } from '@mui/material';
 
 
@@ -13,7 +12,7 @@ import { selectClasses } from '@mui/material';
 
 
 function TransactionList() {
-    // const { transactionList } = useContext(ApplicationContext)
+    
     const { transactionList, transactionDispatch } = useContext(ApplicationContext)
     const containerStyles = {
         display: 'flex',
@@ -36,7 +35,7 @@ function TransactionList() {
     return (
         <>
             <h3>History</h3>
-            <button className='btn-reset' onClick={handleReset}>reset</button>
+            <button className='btn-reset' onClick={handleReset}>Reset</button>
             {
                 transactionList.map((listItem) => (
                     <Box style={{ backgroundColor: listItem.backgroundColor }} sx={containerStyles} key={listItem.id} >

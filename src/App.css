@@ -122,15 +122,16 @@ input[type='number'] {
   color: #FF1E00;
 }
 
-/* .btn-reset {
+.btn-reset {
   cursor: pointer;
-  background-color: #ccb2af;
+  background-color: blue;
   box-shadow: var(--box-shadow);
-  color: #0a0909;
+  color: #ffffff;
   border: 0;
   display: block;
   font-size: 20px;
   width: 10%;
+  height: 30px;
   display: inline;
-  margin-left: 10px;
-} */
+  margin-left: 90%;
+}

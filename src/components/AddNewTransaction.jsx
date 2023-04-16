@@ -38,7 +38,7 @@ function AddNewTransaction() {
 
   }
 
-  console.log('amount', typeof (amount))
+  // console.log('amount', typeof (amount))
 
   return (
     <>
@@ -65,6 +65,7 @@ function AddNewTransaction() {
 
       {/* BUTTON CONTAINER */}
       <div>
+        <br/>
         <button className='add-inc' data-inline="true" id='income' onClick={handleFormSubmit}>Add Income</button>
         <button className='add-exp' data-inline="true" id='expense' onClick={handleFormSubmit} >Add Expense</button>
 
