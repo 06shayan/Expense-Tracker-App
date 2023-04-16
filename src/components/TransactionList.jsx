@@ -23,9 +23,9 @@ function TransactionList() {
         fontSize: '20px'
     }
 
-    const handleReset = () => {
-        transactionDispatch({ type: 'reset' })
-    }
+    // const handleReset = () => {
+    //     transactionDispatch({ type: 'reset' })
+    // }
 
     const handleDelete = (id) => {
         transactionDispatch({ type: 'delete-transaction', payload: { id: id } })
@@ -35,7 +35,7 @@ function TransactionList() {
     return (
         <>
             <h3>History</h3>
-            <button className='btn-reset' onClick={handleReset}>Reset</button>
+            {/* <button className='btn-reset' onClick={handleReset}>Reset</button> */}
             {
                 transactionList.map((listItem) => (
                     <Box style={{ backgroundColor: listItem.backgroundColor }} sx={containerStyles} key={listItem.id} >

@@ -8,6 +8,7 @@ import TransactionList from './components/TransactionList';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import { ContextProvider } from './GlobalContext';
+import ResetDialogueBox from './components/ResetDialogueBox';
 
 
 
@@ -29,6 +30,7 @@ function App() {
           <Paper elevation={3} sx={paper} >
             <Header />
             <Balance />
+            <ResetDialogueBox/>
             {/* <Toggler /> */}
             <IncomeExpenseSection />
             <TransactionList />
