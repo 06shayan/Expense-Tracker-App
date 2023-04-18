@@ -12,7 +12,7 @@ import { selectClasses } from '@mui/material';
 
 function TransactionList() {
 
-    const { transactionList, transactionDispatch } = useContext(ApplicationContext)
+    const { transactionList, transactionDispatch, textDispatch, amountDispatch } = useContext(ApplicationContext)
     const containerStyles = {
         display: 'flex',
         justifyContent: 'space-between',
@@ -27,18 +27,21 @@ function TransactionList() {
     const handleDelete = (id) => {
         transactionDispatch({ type: 'delete-transaction', payload: { id: id } })
     }
-    // const handleEdit = (id) => {
-    //     transactionDispatch({ type: 'edit-transaction', payload: { id: id } })
-    // }
 
-    // const handleEdit=()=>{
-    //     {decription:'kkk',amount:98,date:283728}
-    //     dispatchText()
-    //     setAmount
+    const handleEdit = (data) => {
+        const description = data.item
+        const amount = data.amount
+        const id = data.id
 
-    //     transactionDispatch({ type: 'delete-transaction', payload: { id: id } })
+        console.log(description, amount, id)
 
-    // }
+        // set row data to transaction form
+        textDispatch({ type: 'description-input', payload: description })
+        amountDispatch({ type: 'amount-input', payload: amount })
+
+        // selected row delete
+        transactionDispatch({ type: 'delete-transaction', payload: { id: id } })
+    }
 
 
     return (
@@ -49,10 +52,10 @@ function TransactionList() {
                     <Box style={{ backgroundColor: listItem.backgroundColor }} sx={containerStyles} key={listItem.id} >
                         <div>{listItem.item}</div>
                         <div>{listItem.amount}</div>
-                        {/* <div>{listItem.date.toDateString()}</div> */}
+                        <div>{listItem.date}</div>
                         <div>
                             <DeleteForeverIcon onClick={() => handleDelete(listItem.id)}></DeleteForeverIcon>
-                            <EditIcon/>
+                            <EditIcon onClick={() => handleEdit(listItem)} />
                         </div>
                     </Box>
                 ))

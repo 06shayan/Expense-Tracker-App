@@ -1,22 +1,19 @@
 import React, { useContext, useState } from 'react'
 import { ApplicationContext } from '../GlobalContext'
-import { pink } from '@mui/material/colors'
 import { v4 as uuidv4 } from 'uuid';
 
 function AddNewTransaction() {
 
-  const [text, setText] = useState('')
-  const [amount, setAmount] = useState('')
   const [error, setError] = useState(false)
-  const { transactionList, transactionDispatch } = useContext(ApplicationContext)
+  const { transactionDispatch, text, textDispatch, amount, amountDispatch } = useContext(ApplicationContext)
   const uuid = uuidv4()
 
   const handleDescription = (e) => {
-    setText(e.target.value)
+    textDispatch({ type: 'description-input', payload: e.target.value })
   }
 
   const handleAmount = (e) => {
-    setAmount(e.target.value)
+    amountDispatch({ type: 'amount-input', payload: e.target.value })
   }
 
   const handleFormSubmit = (e) => {
@@ -29,16 +26,14 @@ function AddNewTransaction() {
     }
 
     if (text && amount) {
-      const data = { id: uuid, backgroundColor: selectedButton === 'income' ? '#59CE8F' : '#FF0000', item: text, amount: amount, date: new Date() };
+      const data = { id: uuid, backgroundColor: selectedButton === 'income' ? '#59CE8F' : '#FF0000', item: text, amount: amount, date: new Date().toDateString() };
       transactionDispatch({ type: 'add-transaction', payload: data });
-      setText("");
-      setAmount("");
+      textDispatch({ type: 'description-input', payload: "" })
+      amountDispatch({ type: 'amount-input', payload: "" })
     }
-
-
   }
 
-  
+
 
   return (
     <>
@@ -65,7 +60,7 @@ function AddNewTransaction() {
 
       {/* BUTTON CONTAINER */}
       <div>
-        <br/>
+        <br />
         <button className='add-inc' data-inline="true" id='income' onClick={handleFormSubmit}>Add Income</button>
         <button className='add-exp' data-inline="true" id='expense' onClick={handleFormSubmit} >Add Expense</button>
 
