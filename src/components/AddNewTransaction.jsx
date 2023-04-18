@@ -38,7 +38,7 @@ function AddNewTransaction() {
 
   }
 
-  // console.log('amount', typeof (amount))
+  
 
   return (
     <>

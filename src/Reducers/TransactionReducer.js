@@ -8,6 +8,7 @@ export function TransactionReducer(state, action) {
 
         case 'reset':
             return []
+    
 
         default:
             return state

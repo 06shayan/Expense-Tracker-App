@@ -10,7 +10,6 @@ import { selectClasses } from '@mui/material';
 
 
 
-
 function TransactionList() {
 
     const { transactionList, transactionDispatch } = useContext(ApplicationContext)
@@ -23,13 +22,14 @@ function TransactionList() {
         fontSize: '20px'
     }
 
-    // const handleReset = () => {
-    //     transactionDispatch({ type: 'reset' })
-    // }
+
 
     const handleDelete = (id) => {
         transactionDispatch({ type: 'delete-transaction', payload: { id: id } })
     }
+    // const handleEdit = (id) => {
+    //     transactionDispatch({ type: 'edit-transaction', payload: { id: id } })
+    // }
 
     // const handleEdit=()=>{
     //     {decription:'kkk',amount:98,date:283728}
@@ -44,16 +44,15 @@ function TransactionList() {
     return (
         <>
             <h3>History</h3>
-            {/* <button className='btn-reset' onClick={handleReset}>Reset</button> */}
             {
                 transactionList.map((listItem) => (
                     <Box style={{ backgroundColor: listItem.backgroundColor }} sx={containerStyles} key={listItem.id} >
                         <div>{listItem.item}</div>
                         <div>{listItem.amount}</div>
-                        <div>{listItem.date.toDateString()}</div>
+                        {/* <div>{listItem.date.toDateString()}</div> */}
                         <div>
                             <DeleteForeverIcon onClick={() => handleDelete(listItem.id)}></DeleteForeverIcon>
-                            <EditIcon />
+                            <EditIcon/>
                         </div>
                     </Box>
                 ))

@@ -12,6 +12,7 @@ import ResetDialogueBox from './components/ResetDialogueBox';
 
 
 
+
 const mainContainer = {
   height: '100vh',
   width: '100%',
@@ -25,6 +26,7 @@ const paper = { width: '60%', padding: '30px', backgroundColor: '#FFEAEA' }
 function App() {
   return (
     <div className='App'>
+      
       <ContextProvider>
         <Box sx={mainContainer}>
           <Paper elevation={3} sx={paper} >
