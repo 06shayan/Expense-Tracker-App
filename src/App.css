@@ -1,53 +1,58 @@
 .App {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
-   background-color: #2D2727
-    /* background-image: url("https://images.unsplash.com/photo-1636953056323-9c09fdd74fa6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* background-image: url("https://images.unsplash.com/photo-1636953056323-9c09fdd74fa6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80");
     background-image: url("https://img.freepik.com/premium-photo/abstract-futuristic-molecule-structure-gold-color-black-background_40760-174.jpg");
     background-image: url("https://images.pexels.com/photos/304664/pexels-photo-304664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-size: cover;
 	background-position: center; */
-  }
+}
 
-  h1 {
-    margin: 10px auto ;
-    width: max-content;
-    position: relative;
-    cursor: pointer;
-    font-size: xx-large;
-  }
-  h1::after{
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    height: 4px;
-    width: 100%;
-    left: 0;
-    background-color: rgb(32, 30, 30);
-    transition: 0.3s;
-    transition-timing-function: ease-in-out;
-    transform: scaleX(0);
-  }
-  h1:hover::after{
-    transform: scaleX(1);
-  }
+h1 {
+  margin: 10px auto;
+  width: max-content;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  color: #1e1f1f
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  height: 2.5px;
+  width: 100%;
+  left: 0;
+  background-color: #4287f5;
+  transition: 0.3s;
+  transition-timing-function: ease-in-out;
+  transform: scaleX(0);
+}
+
+h1:hover::after {
+  transform: scaleX(1);
+}
 
 
- h3{
-    border-bottom: 1px solid #bbb;
-    padding-bottom: 10px;
-    margin: 40px 0 10px;
-    text-transform: uppercase;
-    font-size: 25px;
- }
+h3 {
+  margin-top: 25px;
+  text-transform: uppercase;
+}
 
- span{
-    margin: 0;
-    letter-spacing: 1px;
-    font-size: 25px;
- }
+h4 {
+  margin-top: -15px;
+  color: #4287f5;
+}
+
+span {
+  margin: 0;
+  letter-spacing: 1px;
+  font-size: 25px;
+}
+
 /* 
  .income-expense-box{
     background-color: #fff;
@@ -69,42 +74,41 @@
     border-right: 1px solid #dedede;
  } */
 
- .add-inc{
- cursor: pointer;
- background-color: #59CE8F;
- box-shadow: var(--box-shadow);
- color: #fff;
- border: 0;
- display: block;
- font-size: 20px;
- padding: 10px;
- width: 45%;
- display: inline;
- margin-right: 20px;
- margin-left: 30px;
- }
+.add-inc {
+  cursor: pointer;
+  background-color: #36c94a;
+  box-shadow: var(--box-shadow);
+  color: #fff;
+  border: 0;
+  display: block;
+  font-size: 15px;
+  padding: 10px;
+  width: 45%;
+  margin-right: 20px;
+  border-radius: 4px;
+}
 
- .add-exp{
-   cursor: pointer;
- background-color: #FF1E00;
- box-shadow: var(--box-shadow);
- color: #fff;
- border: 0;
- display: block;
- font-size: 20px;
- padding: 10px;
- width: 45%;
- display: inline;
- margin-left: 30px;
- }
+.add-exp {
+  cursor: pointer;
+  background-color: #e80c1d;
+  box-shadow: var(--box-shadow);
+  color: #fff;
+  border: 0;
+  display: block;
+  font-size: 15px;
+  padding: 10px;
+  width: 45%;
+  display: inline;
+  border-radius: 4px;
+}
 
- label {
-   display: inline-block;
-   margin: 10px 0;
-   font-size: large;
- }
- 
- 
+label {
+  display: inline-block;
+  margin: 10px 0;
+  font-size: large;
+}
+
+
 input[type='text'],
 input[type='number'] {
   border: 1px solid #dedede;
@@ -117,21 +121,25 @@ input[type='number'] {
 
 #validation {
   display: inline-block;
-  margin: 10px 0;
-  font-size: medium;
+  margin: -10px;
+  margin-left: 0;
+  font-size: 12px;
   color: #FF1E00;
 }
 
 .btn-reset {
   cursor: pointer;
-  background-color: blue;
+  background-color: #4287f5;
   box-shadow: var(--box-shadow);
   color: #ffffff;
   border: 0;
-  display: block;
-  font-size: 20px;
-  width: 10%;
+  font-size: 14px;
+  width: 80px;
   height: 30px;
-  display: inline;
-  margin-left: 90%;
+  border-radius: 4px;
+  transition: 0.5s ease;
+}
+
+.btn-reset:hover {
+  transform: scale(1.03);
 }

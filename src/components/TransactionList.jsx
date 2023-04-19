@@ -1,28 +1,47 @@
-import React, { useContext } from 'react'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
 import Box from '@mui/material/Box';
-import { v4 as uuidv4 } from 'uuid';
-import AddNewTransaction from './AddNewTransaction';
+import React, { useContext } from 'react';
 import { ApplicationContext } from '../GlobalContext';
-import { selectClasses } from '@mui/material';
-
-
+import ResetDialogueBox from './ResetDialogueBox';
 
 
 function TransactionList() {
+    const wrapperContainer = {
+        maxHeight: '160px',
+        overflow: 'auto',
 
-    const { transactionList, transactionDispatch, textDispatch, amountDispatch } = useContext(ApplicationContext)
+    }
     const containerStyles = {
         display: 'flex',
         justifyContent: 'space-between',
-        margin: '20px 0px',
-        padding: '10px',
+        alignItems: 'center',
+        margin: '15px 0px',
+        padding: '5px',
         color: 'white',
-        fontSize: '20px'
+        borderRadius: '4px',
+        fontWeight: '500'
+    }
+    const historyContainer = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    }
+    const noHistory = {
+        fontSize: '14px',
+        textAlign: 'center',
+        margin: '20px 0px',
+        color: 'grey'
+    }
+    const EditStyles = {
+        marginLeft: '7px',
+        cursor: 'pointer',
+    }
+    const deleteStyles = {
+        cursor: 'pointer',
     }
 
-
+    const { transactionList, transactionDispatch, textDispatch, amountDispatch } = useContext(ApplicationContext)
 
     const handleDelete = (id) => {
         transactionDispatch({ type: 'delete-transaction', payload: { id: id } })
@@ -43,25 +62,35 @@ function TransactionList() {
         transactionDispatch({ type: 'delete-transaction', payload: { id: id } })
     }
 
-
     return (
         <>
-            <h3>History</h3>
-            {
-                transactionList.map((listItem) => (
-                    <Box style={{ backgroundColor: listItem.backgroundColor }} sx={containerStyles} key={listItem.id} >
-                        <div>{listItem.item}</div>
-                        <div>{listItem.amount}</div>
-                        <div>{listItem.date}</div>
-                        <div>
-                            <DeleteForeverIcon onClick={() => handleDelete(listItem.id)}></DeleteForeverIcon>
-                            <EditIcon onClick={() => handleEdit(listItem)} />
+            <div style={historyContainer}>
+                <h3>History</h3>
+                <ResetDialogueBox />
+            </div>
+            <hr />
+
+            <div>
+                {
+                    transactionList?.length === 0 ? <Box sx={noHistory}>NO HISTORY YET</Box> :
+                        <div style={wrapperContainer}>
+                            {
+                                transactionList.map((listItem) => (
+                                    <Box style={{ backgroundColor: listItem.backgroundColor }} sx={containerStyles} key={listItem.id} >
+                                        <Box sx={{ fontSize: '15px' }}>{listItem.item}</Box>
+                                        <Box sx={{ fontSize: '15px' }}>{listItem.amount}</Box>
+                                        <Box sx={{ fontSize: '15px' }}>{listItem.date}</Box>
+                                        <div>
+                                            <DeleteForeverIcon style={deleteStyles} onClick={() => handleDelete(listItem.id)}></DeleteForeverIcon>
+                                            <EditIcon style={EditStyles} onClick={() => handleEdit(listItem)} />
+                                        </div>
+                                    </Box>
+                                ))
+                            }
                         </div>
-                    </Box>
-                ))
 
-            }
-
+                }
+            </div>
         </>
     )
 }

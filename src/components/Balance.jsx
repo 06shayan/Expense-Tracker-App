@@ -6,8 +6,8 @@ import CountUp from 'react-countup';
 function Balance() {
     const { transactionList } = useContext(ApplicationContext)
 
-    const incomeTransactions = transactionList.filter(transaction => transaction.backgroundColor !== '#FF0000');
-    const expenseTransactions = transactionList.filter(transaction => transaction.backgroundColor === '#FF0000');
+    const incomeTransactions = transactionList.filter(transaction => transaction.backgroundColor !== '#e80c1d');
+    const expenseTransactions = transactionList.filter(transaction => transaction.backgroundColor === '#e80c1d');
 
 
     const totalIncome = incomeTransactions.reduce((total, transaction) => total + parseInt(transaction.amount), 0);
@@ -17,10 +17,8 @@ function Balance() {
 
     return (
         <>
-            <h3>Balance: <span>
-                <CountUp end={totalBalance} duration={1.5} prefix="$ " />
-            </span></h3>
-
+            <h3>Current Balance</h3>
+            <h4><CountUp end={totalBalance} duration={1.5} prefix="$" /></h4>
         </>
     )
 }

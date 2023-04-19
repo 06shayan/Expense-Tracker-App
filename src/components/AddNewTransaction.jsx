@@ -1,8 +1,21 @@
 import React, { useContext, useState } from 'react'
 import { ApplicationContext } from '../GlobalContext'
 import { v4 as uuidv4 } from 'uuid';
+import { Box } from '@mui/material';
+
 
 function AddNewTransaction() {
+
+  const wrapper = {
+    marginTop: '-15px'
+  }
+
+  const label = {
+    fontSize: '14px',
+  }
+  const inputField = {
+    width: '95%'
+  }
 
   const [error, setError] = useState(false)
   const { transactionDispatch, text, textDispatch, amount, amountDispatch } = useContext(ApplicationContext)
@@ -26,7 +39,7 @@ function AddNewTransaction() {
     }
 
     if (text && amount) {
-      const data = { id: uuid, backgroundColor: selectedButton === 'income' ? '#59CE8F' : '#FF0000', item: text, amount: amount, date: new Date().toDateString() };
+      const data = { id: uuid, backgroundColor: selectedButton === 'income' ? '#36c94a' : '#e80c1d', item: text, amount: amount, date: new Date().toDateString() };
       transactionDispatch({ type: 'add-transaction', payload: data });
       textDispatch({ type: 'description-input', payload: "" })
       amountDispatch({ type: 'amount-input', payload: "" })
@@ -40,31 +53,27 @@ function AddNewTransaction() {
       {/* HEADING */}
       <h3>Add New Transcation</h3>
 
-
-
       {/* DESCRIPTION FIELD */}
-      <div>
-        <label>Description: </label>
-        <input type='text' placeholder='Enter text ...' value={text} onChange={handleDescription} />
+      <div style={wrapper}>
+        <label style={label}>Please Enter Description </label>
+        <input style={inputField} type='text' value={text} onChange={handleDescription} />
       </div>
       {error && text === '' ?
         <label id='validation'>This field can not be empty</label> : null}
 
       {/* AMOUNT FIELD */}
       <div>
-        <label>Amount: </label>
-        <input type='number' value={amount} onChange={handleAmount} />
+        <label style={label}>Please Enter Amount </label>
+        <input style={inputField} type='number' value={amount} onChange={handleAmount} />
       </div>
       {error && amount === '' ?
         <label id='validation'>This field can not be empty</label> : null}
 
       {/* BUTTON CONTAINER */}
-      <div>
-        <br />
+      <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
         <button className='add-inc' data-inline="true" id='income' onClick={handleFormSubmit}>Add Income</button>
         <button className='add-exp' data-inline="true" id='expense' onClick={handleFormSubmit} >Add Expense</button>
-
-      </div>
+      </Box>
 
     </>
 
